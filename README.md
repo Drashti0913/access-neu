@@ -19,7 +19,7 @@ taught by Prof. John Alexis Guerra Gómez.
 
 ## Links
 
-- Live app: TODO-add-render-url
+- Live app: [TODO-add-render-url](https://access-neu.onrender.com/index.html)
 - Demo video: TODO-add-video-link
 - Slides: TODO-add-slides-link
 - Design document: [docs/DESIGN.md](docs/DESIGN.md)
