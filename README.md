@@ -19,9 +19,9 @@ taught by Prof. John Alexis Guerra Gómez.
 
 ## Links
 
-- Live app: (https://access-neu.onrender.com/index.html)
+- Live app: [Live App](https://access-neu.onrender.com/index.html)
 - Demo video: TODO-add-video-link
-- Slides: TODO-add-slides-link
+- Slides: [Google Slides](https://docs.google.com/presentation/d/1VDbcAOcNWCjDYKrmIQnBvj7GHDdyMgXGWpEm_rsC-Ig/edit?usp=sharing)
 - Design document: [docs/DESIGN.md](docs/DESIGN.md)
 
 ## Project objective
