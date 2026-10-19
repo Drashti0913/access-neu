@@ -14,12 +14,13 @@ for Northeastern students.
 
 ## Class
 
-[CS 5610 Web Development, Northeastern University](TODO-add-class-page-link),
+[CS 5610 Web Development, Northeastern University](https://johnguerra.co/classes/webDevelopment_online_fall_2026/),
 taught by Prof. John Alexis Guerra Gómez.
 
 ## Links
 
-- Live app: [Live App](https://access-neu.onrender.com/index.html)
+- Code: [github.com/Drashti0913/access-neu](https://github.com/Drashti0913/access-neu)
+- Live app: [access-neu.onrender.com](https://access-neu.onrender.com/)
 - Demo video: TODO-add-video-link
 - Slides: [Google Slides](https://docs.google.com/presentation/d/1VDbcAOcNWCjDYKrmIQnBvj7GHDdyMgXGWpEm_rsC-Ig/edit?usp=sharing)
 - Design document: [docs/DESIGN.md](docs/DESIGN.md)
@@ -88,7 +89,7 @@ Requirements: Node.js 20 or newer and a MongoDB database (local or
 [MongoDB Atlas](https://www.mongodb.com/atlas)).
 
 ```bash
-git clone TODO-add-repo-url
+git clone https://github.com/Drashti0913/access-neu.git
 cd access-neu
 npm install
 cp .env.example .env      # then set MONGO_URI to your connection string
