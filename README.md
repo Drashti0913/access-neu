@@ -123,8 +123,15 @@ settings.
 
 ## Use of AI
 
-TODO: describe how you used generative AI tools (for example Claude Code) while
-building this project, as required by the course policy.
+We used Claude Code as a development assistant. We came up with the project idea, the features and the user
+stories, and the course approved our proposal. From that proposal and the
+rubric, Claude Code generated the initial code for both collections, the seed
+script, the wireframes and first drafts of the documentation. It also helped
+us debug the layout.
+
+We set up MongoDB Atlas and deployed the app on Render ourselves, tested
+every feature, and reviewed and edited the code and documents. We are
+responsible for the final result and can explain how each part works.
 
 ## License
 
