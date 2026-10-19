@@ -1,0 +1,32 @@
+.report-card[data-status="open"] {
+  border-left-color: var(--color-accent);
+}
+
+.report-card[data-status="resolved"] {
+  border-left-color: var(--color-success-text);
+  background: #fbfdfb;
+}
+
+.badge-open {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+  border-color: currentcolor;
+}
+
+.badge-resolved {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  border-color: currentcolor;
+}
+
+.badge-severity-high {
+  background: #8a0015;
+  color: #fff;
+  border-color: #8a0015;
+}
+
+.badge-severity-medium {
+  background: #fff1d6;
+  color: #6b4200;
+  border-color: #b07a12;
+}

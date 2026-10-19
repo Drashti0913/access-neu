@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiet spaces - AccessNEU</title>
+    <meta
+      name="description"
+      content="Find, add and update quiet and sensory-friendly study spaces at Northeastern."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/pagination.css" />
+    <link rel="stylesheet" href="css/dialog.css" />
+    <link rel="stylesheet" href="css/spaces.css" />
+    <script type="module" src="js/spaces/spacesPage.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html">AccessNEU</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reports.html">Access reports</a></li>
+          <li><a href="spaces.html" aria-current="page">Quiet spaces</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="container">
+      <h1>Quiet spaces</h1>
+      <p class="lead">
+        Quiet and sensory-friendly study spots, maintained by students.
+      </p>
+      <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+      <div class="page-layout">
+        <section class="panel" aria-labelledby="space-form-title">
+          <h2 id="space-form-title">Add a quiet space</h2>
+          <form id="space-form" novalidate>
+            <input type="hidden" name="id" />
+            <div class="field">
+              <label for="space-name">Name of the space</label>
+              <input
+                id="space-name"
+                name="name"
+                type="text"
+                required
+                minlength="3"
+                maxlength="80"
+                placeholder="Snell 4th floor silent zone"
+              />
+              <p class="field-error" data-error-for="name"></p>
+            </div>
+            <div class="field">
+              <label for="space-building">Building</label>
+              <select id="space-building" name="building" required></select>
+              <p class="field-error" data-error-for="building"></p>
+            </div>
+            <div class="field">
+              <label for="space-floor"
+                >Floor or room <span class="optional">(optional)</span></label
+              >
+              <input
+                id="space-floor"
+                name="floor"
+                type="text"
+                maxlength="30"
+                placeholder="Room 410"
+              />
+              <p class="field-error" data-error-for="floor"></p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="space-noise">Noise level</label>
+                <select id="space-noise" name="noiseLevel" required></select>
+                <p class="field-error" data-error-for="noiseLevel"></p>
+              </div>
+              <div class="field">
+                <label for="space-lighting">Lighting</label>
+                <select id="space-lighting" name="lighting" required></select>
+                <p class="field-error" data-error-for="lighting"></p>
+              </div>
+            </div>
+            <fieldset class="field">
+              <legend>Accessibility and comfort features</legend>
+              <div id="space-features" class="checkbox-grid"></div>
+              <p class="field-error" data-error-for="features"></p>
+            </fieldset>
+            <div class="field-row">
+              <div class="field">
+                <label for="space-capacity">Seats (approx.)</label>
+                <input
+                  id="space-capacity"
+                  name="capacity"
+                  type="number"
+                  required
+                  min="1"
+                  max="500"
+                  step="1"
+                  value="10"
+                />
+                <p class="field-error" data-error-for="capacity"></p>
+              </div>
+              <div class="field">
+                <label for="space-hours">Hours</label>
+                <input
+                  id="space-hours"
+                  name="hours"
+                  type="text"
+                  required
+                  maxlength="80"
+                  placeholder="Mon-Fri 8am-10pm"
+                />
+                <p class="field-error" data-error-for="hours"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="space-notes"
+                >Notes <span class="optional">(optional)</span></label
+              >
+              <textarea
+                id="space-notes"
+                name="notes"
+                rows="3"
+                maxlength="1000"
+                placeholder="Best times, how to book, nearby restrooms..."
+              ></textarea>
+              <p class="field-error" data-error-for="notes"></p>
+            </div>
+            <div class="field">
+              <label for="space-added-by"
+                >Your name <span class="optional">(optional)</span></label
+              >
+              <input
+                id="space-added-by"
+                name="addedBy"
+                type="text"
+                maxlength="60"
+                autocomplete="name"
+              />
+              <p class="field-error" data-error-for="addedBy"></p>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="button" id="space-submit">
+                Add space
+              </button>
+              <button
+                type="button"
+                class="button button-secondary"
+                id="space-cancel"
+                hidden
+              >
+                Cancel edit
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section aria-labelledby="space-list-title">
+          <h2 id="space-list-title">Study spaces</h2>
+          <form id="space-filters" class="filters" role="search">
+            <div class="field">
+              <label for="filter-q">Search</label>
+              <input
+                id="filter-q"
+                name="q"
+                type="search"
+                placeholder="library, lounge..."
+              />
+            </div>
+            <div class="field">
+              <label for="filter-building">Building</label>
+              <select id="filter-building" name="building"></select>
+            </div>
+            <div class="field">
+              <label for="filter-noise">Noise level</label>
+              <select id="filter-noise" name="noiseLevel"></select>
+            </div>
+            <div class="field">
+              <label for="filter-lighting">Lighting</label>
+              <select id="filter-lighting" name="lighting"></select>
+            </div>
+            <div class="field">
+              <label for="filter-feature">Feature</label>
+              <select id="filter-feature" name="feature"></select>
+            </div>
+            <div class="filter-actions">
+              <button type="submit" class="button">Apply filters</button>
+              <button type="reset" class="button button-secondary">
+                Clear
+              </button>
+            </div>
+          </form>
+          <p id="space-summary" class="summary" aria-live="polite"></p>
+          <ul id="space-list" class="card-list"></ul>
+          <nav
+            id="space-pagination"
+            class="pagination"
+            aria-label="Space pages"
+          ></nav>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>
+        AccessNEU by Drashti Bhavsar and Hard Gondaliya. Community-reported
+        information: double-check before you rely on it. Sample data is
+        fictional.
+      </p>
+    </footer>
+    <dialog id="confirm-dialog" class="confirm-dialog">
+      <form method="dialog">
+        <p id="confirm-message"></p>
+        <div class="form-actions">
+          <button value="cancel" class="button button-secondary">Cancel</button>
+          <button value="confirm" class="button button-danger">Delete</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

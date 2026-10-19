@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AccessNEU - Campus accessibility board</title>
+    <meta
+      name="description"
+      content="Report campus accessibility barriers and find quiet study spaces at Northeastern."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <script type="module" src="js/home.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html">AccessNEU</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="reports.html">Access reports</a></li>
+          <li><a href="spaces.html">Quiet spaces</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="container">
+      <section class="hero">
+        <h1>Know before you go.</h1>
+        <p class="lead">
+          AccessNEU is a community board where Northeastern students share
+          broken elevators, blocked entrances and other access barriers, and
+          keep a guide to quiet, sensory-friendly study spaces.
+        </p>
+      </section>
+
+      <section class="feature-grid" aria-label="Features">
+        <article class="feature-card">
+          <h2>Access reports</h2>
+          <p>
+            <strong id="open-report-count">-</strong> open barrier reports right
+            now.
+          </p>
+          <p>Check a building before you visit, or report what you found.</p>
+          <a class="button" href="reports.html">Browse access reports</a>
+        </article>
+        <article class="feature-card">
+          <h2>Quiet spaces</h2>
+          <p>
+            <strong id="space-count">-</strong> study spaces listed by students.
+          </p>
+          <p>Filter by noise, lighting and accessibility features.</p>
+          <a class="button" href="spaces.html">Find a quiet space</a>
+        </article>
+      </section>
+
+      <section class="how-to" aria-labelledby="how-to-title">
+        <h2 id="how-to-title">How to use AccessNEU</h2>
+        <div class="how-to-grid">
+          <div>
+            <h3>Access reports</h3>
+            <ol>
+              <li>Open <a href="reports.html">Access reports</a>.</li>
+              <li>
+                Use the filters to pick a building, category or status, then
+                select <em>Apply filters</em>.
+              </li>
+              <li>
+                To report a barrier, fill in the <em>Report a barrier</em> form
+                and select <em>Submit report</em>.
+              </li>
+              <li>
+                On any report, select <em>Mark resolved</em> once it is fixed,
+                <em>Edit</em> to correct details, or <em>Delete</em> to remove a
+                duplicate.
+              </li>
+            </ol>
+          </div>
+          <div>
+            <h3>Quiet spaces</h3>
+            <ol>
+              <li>Open <a href="spaces.html">Quiet spaces</a>.</li>
+              <li>
+                Filter by building, noise level, lighting or a feature such as
+                step-free access.
+              </li>
+              <li>
+                To add a space, fill in the <em>Add a quiet space</em> form.
+              </li>
+              <li>
+                Select <em>Edit</em> to update hours or features, or
+                <em>Delete</em> if a space has closed.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <p class="hint">
+          No account is needed. Please keep reports factual and do not include
+          personal information about other people.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>
+        AccessNEU by Drashti Bhavsar and Hard Gondaliya. Community-reported
+        information: double-check before you rely on it. Sample data is
+        fictional.
+      </p>
+    </footer>
+  </body>
+</html>

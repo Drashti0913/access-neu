@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Access reports - AccessNEU</title>
+    <meta
+      name="description"
+      content="Browse, add, edit and resolve campus accessibility barrier reports."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/pagination.css" />
+    <link rel="stylesheet" href="css/dialog.css" />
+    <link rel="stylesheet" href="css/reports.css" />
+    <script type="module" src="js/reports/reportsPage.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html">AccessNEU</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reports.html" aria-current="page">Access reports</a></li>
+          <li><a href="spaces.html">Quiet spaces</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="container">
+      <h1>Access reports</h1>
+      <p class="lead">
+        Temporary barriers reported by students. Open reports are listed first.
+      </p>
+      <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+      <div class="page-layout">
+        <section class="panel" aria-labelledby="report-form-title">
+          <h2 id="report-form-title">Report a barrier</h2>
+          <form id="report-form" novalidate>
+            <input type="hidden" name="id" />
+            <div class="field">
+              <label for="report-title">Title</label>
+              <input
+                id="report-title"
+                name="title"
+                type="text"
+                required
+                minlength="5"
+                maxlength="100"
+                placeholder="East elevator out of service"
+              />
+              <p class="field-error" data-error-for="title"></p>
+            </div>
+            <div class="field">
+              <label for="report-location">Building</label>
+              <select id="report-location" name="location" required></select>
+              <p class="field-error" data-error-for="location"></p>
+            </div>
+            <div class="field">
+              <label for="report-floor"
+                >Floor or area <span class="optional">(optional)</span></label
+              >
+              <input
+                id="report-floor"
+                name="floor"
+                type="text"
+                maxlength="30"
+                placeholder="2nd floor"
+              />
+              <p class="field-error" data-error-for="floor"></p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="report-category">Category</label>
+                <select id="report-category" name="category" required></select>
+                <p class="field-error" data-error-for="category"></p>
+              </div>
+              <div class="field">
+                <label for="report-severity">Severity</label>
+                <select id="report-severity" name="severity" required></select>
+                <p class="field-error" data-error-for="severity"></p>
+              </div>
+            </div>
+            <fieldset class="field">
+              <legend>Status</legend>
+              <div class="radio-row">
+                <label
+                  ><input type="radio" name="status" value="open" checked />
+                  Open</label
+                >
+                <label
+                  ><input type="radio" name="status" value="resolved" />
+                  Resolved</label
+                >
+              </div>
+              <p class="field-error" data-error-for="status"></p>
+            </fieldset>
+            <div class="field">
+              <label for="report-description">What is the barrier?</label>
+              <textarea
+                id="report-description"
+                name="description"
+                rows="4"
+                required
+                minlength="10"
+                maxlength="1000"
+                placeholder="Describe the problem and any alternative route."
+              ></textarea>
+              <p class="field-error" data-error-for="description"></p>
+            </div>
+            <div class="field">
+              <label for="report-reporter"
+                >Your name <span class="optional">(optional)</span></label
+              >
+              <input
+                id="report-reporter"
+                name="reporterName"
+                type="text"
+                maxlength="60"
+                autocomplete="name"
+              />
+              <p class="field-error" data-error-for="reporterName"></p>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="button" id="report-submit">
+                Submit report
+              </button>
+              <button
+                type="button"
+                class="button button-secondary"
+                id="report-cancel"
+                hidden
+              >
+                Cancel edit
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section aria-labelledby="report-list-title">
+          <h2 id="report-list-title">Current reports</h2>
+          <form id="report-filters" class="filters" role="search">
+            <div class="field">
+              <label for="filter-q">Search</label>
+              <input
+                id="filter-q"
+                name="q"
+                type="search"
+                placeholder="elevator, ramp..."
+              />
+            </div>
+            <div class="field">
+              <label for="filter-location">Building</label>
+              <select id="filter-location" name="location"></select>
+            </div>
+            <div class="field">
+              <label for="filter-category">Category</label>
+              <select id="filter-category" name="category"></select>
+            </div>
+            <div class="field">
+              <label for="filter-status">Status</label>
+              <select id="filter-status" name="status"></select>
+            </div>
+            <div class="filter-actions">
+              <button type="submit" class="button">Apply filters</button>
+              <button type="reset" class="button button-secondary">
+                Clear
+              </button>
+            </div>
+          </form>
+          <p id="report-summary" class="summary" aria-live="polite"></p>
+          <ul id="report-list" class="card-list"></ul>
+          <nav
+            id="report-pagination"
+            class="pagination"
+            aria-label="Report pages"
+          ></nav>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>
+        AccessNEU by Drashti Bhavsar and Hard Gondaliya. Community-reported
+        information: double-check before you rely on it. Sample data is
+        fictional.
+      </p>
+    </footer>
+    <dialog id="confirm-dialog" class="confirm-dialog">
+      <form method="dialog">
+        <p id="confirm-message"></p>
+        <div class="form-actions">
+          <button value="cancel" class="button button-secondary">Cancel</button>
+          <button value="confirm" class="button button-danger">Delete</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+.confirm-dialog {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  max-width: min(420px, 100% - 2rem);
+}
+
+.confirm-dialog::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+
+.confirm-dialog p {
+  font-weight: 600;
+}

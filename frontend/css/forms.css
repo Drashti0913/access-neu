@@ -1,0 +1,139 @@
+.page-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  min-width: 0;
+}
+
+fieldset.field {
+  border: 0;
+  padding: 0;
+  margin-inline: 0;
+}
+
+.field label,
+.field legend {
+  font-weight: 600;
+  padding: 0;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 420px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+input[type="text"],
+input[type="search"],
+input[type="number"],
+select,
+textarea {
+  font: inherit;
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  color: var(--color-text);
+  background: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--color-error-text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.radio-row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.radio-row label,
+.checkbox-grid label {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-2);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-accent);
+}
+
+.field-error {
+  margin: 0;
+  min-height: 0;
+  color: var(--color-error-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0 var(--space-3);
+  align-items: end;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-3) 0;
+  margin-bottom: var(--space-3);
+}
+
+.filter-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
