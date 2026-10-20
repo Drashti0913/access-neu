@@ -21,7 +21,7 @@ taught by Prof. John Alexis Guerra Gómez.
 
 - Code: [github.com/Drashti0913/access-neu](https://github.com/Drashti0913/access-neu)
 - Live app: [access-neu.onrender.com](https://access-neu.onrender.com/)
-- Demo video: TODO-add-video-link
+- Demo video: [Youtube](https://youtu.be/Ca4e0EzdGtU)
 - Slides: [Google Slides](https://docs.google.com/presentation/d/1VDbcAOcNWCjDYKrmIQnBvj7GHDdyMgXGWpEm_rsC-Ig/edit?usp=sharing)
 - Design document: [docs/DESIGN.md](docs/DESIGN.md)
 
